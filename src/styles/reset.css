@@ -6,6 +6,7 @@
 	box-sizing: border-box;
 	border: none;
 	outline-color: transparent;
+	overflow-x: hidden;
 }
 
 a,
