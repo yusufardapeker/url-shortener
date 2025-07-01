@@ -4,7 +4,7 @@ import Button from "./shared/Button.vue";
 </script>
 
 <template>
-	<div id="hero">
+	<section id="hero">
 		<img :src="heroIllsutration" class="hero-img" alt="working-illustration" />
 
 		<div class="text-content container">
@@ -15,5 +15,5 @@ import Button from "./shared/Button.vue";
 
 			<Button>Get Started</Button>
 		</div>
-	</div>
+	</section>
 </template>
