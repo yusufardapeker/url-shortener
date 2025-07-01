@@ -1,5 +1,7 @@
-<script setup></script>
+<script setup>
+import Header from "./components/header/Header.vue";
+</script>
 
 <template>
-	<h1>Naber</h1>
+	<Header />
 </template>
