@@ -36,6 +36,10 @@ h6 {
 	font-weight: $fw-bold;
 }
 
+section {
+	margin-bottom: 96px;
+}
+
 .container {
 	width: 88%;
 	max-width: 1024px;
@@ -50,6 +54,14 @@ h6 {
 
 	&.rounded {
 		border-radius: 9999px;
+	}
+
+	&.cornered {
+		border-radius: 4px;
+	}
+
+	&.secondary {
+		background-color: $dark-violet;
 	}
 }
 
@@ -116,6 +128,129 @@ header {
 		.hero-description {
 			margin-top: 8px;
 			margin-bottom: 32px;
+		}
+	}
+}
+
+#url-shorter {
+	.actions {
+		background-color: $dark-violet;
+		display: flex;
+		flex-direction: column;
+		border-radius: 8px;
+		padding: 20px;
+		position: relative;
+
+		& > *:not(.bg-shorten-img) {
+			z-index: 2;
+		}
+
+		.bg-shorten-img {
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			right: 0;
+		}
+
+		.url-input {
+			padding: 12px;
+			border-radius: 4px;
+			margin-bottom: 4px;
+
+			&::placeholder {
+				color: $grayish-violet;
+			}
+		}
+
+		.error-message {
+			font-size: 14px;
+			color: $red;
+		}
+
+		.btn {
+			margin-top: 16px;
+		}
+	}
+
+	.loading {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 24px;
+		gap: 12px;
+		height: 36px;
+
+		.circle {
+			width: 18px;
+			height: 18px;
+			border: 1px solid $cyan;
+			border-radius: 50%;
+			animation: animateLoading 500ms ease infinite alternate;
+		}
+		.triangle {
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-bottom: 20px solid $cyan;
+			animation: animateLoading 500ms 200ms ease infinite alternate;
+		}
+		.square {
+			width: 16px;
+			height: 16px;
+			border: 1px solid $cyan;
+			animation: animateLoading 500ms 300ms ease infinite alternate;
+		}
+
+		@keyframes animateLoading {
+			from {
+				transform: translateY(0);
+			}
+			to {
+				transform: translateY(-8px);
+			}
+		}
+	}
+
+	.shortened-urls {
+		margin-top: 24px;
+		background-color: $white;
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		font-size: 16px;
+
+		.links-wrapper {
+			border-radius: 8px;
+			padding: 16px;
+			position: relative;
+
+			&::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 52px;
+				background-color: $gray;
+				width: 100%;
+				height: 1px;
+			}
+
+			.full-url {
+				margin-bottom: 24px;
+				display: inline-block;
+				width: 28ch;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+
+			.shortened-link {
+				display: flex;
+				flex-direction: column;
+				gap: 12px;
+
+				.link {
+					color: $cyan;
+				}
+			}
 		}
 	}
 }
