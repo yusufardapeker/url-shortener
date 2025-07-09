@@ -87,32 +87,39 @@ const copyUrl = (e, url) => {
 </script>
 
 <template>
-	<section id="url-shorter" class="container">
-		<div class="actions">
-			<img :src="bgShortenMobileImg" alt="bg-img" class="bg-shorten-img" />
+	<section id="url-shorter">
+		<div class="url-shorter-wrapper container">
+			<div class="actions">
+				<img :src="bgShortenMobileImg" alt="bg-img" class="bg-shorten-img" />
 
-			<input type="text" class="url-input" placeholder="Shorten a link here..." v-model="fullUrl" />
-			<span v-if="hasInputError" class="error-message">{{ inputErrorMessage }}</span>
-			<Button variety="cornered" :onClickFunction="shortenUrl">Shorten It!</Button>
+				<input
+					type="text"
+					class="url-input"
+					placeholder="Shorten a link here..."
+					v-model="fullUrl"
+				/>
+				<span v-if="hasInputError" class="error-message">{{ inputErrorMessage }}</span>
+				<Button variety="cornered" :onClickFunction="shortenUrl">Shorten It!</Button>
+			</div>
+
+			<div v-if="loading" class="loading">
+				<span class="circle"></span>
+				<span class="triangle"></span>
+				<span class="square"></span>
+			</div>
+
+			<ul class="shortened-urls">
+				<li v-for="url in shortenedUrls" class="links-wrapper" :key="url.short">
+					<span class="full-url">{{ url.original }}</span>
+
+					<div class="shortened-link">
+						<span class="link">{{ url.short }}</span>
+						<Button variety="cornered" :onClickFunction="(e) => copyUrl(e, url.short)">
+							{{ copiedUrl === url.short ? "Copied!" : "Copy" }}</Button
+						>
+					</div>
+				</li>
+			</ul>
 		</div>
-
-		<div v-if="loading" class="loading">
-			<span class="circle"></span>
-			<span class="triangle"></span>
-			<span class="square"></span>
-		</div>
-
-		<ul class="shortened-urls">
-			<li v-for="url in shortenedUrls" class="links-wrapper" :key="url.short">
-				<span class="full-url">{{ url.original }}</span>
-
-				<div class="shortened-link">
-					<span class="link">{{ url.short }}</span>
-					<Button variety="cornered" :onClickFunction="(e) => copyUrl(e, url.short)">
-						{{ copiedUrl === url.short ? "Copied!" : "Copy" }}</Button
-					>
-				</div>
-			</li>
-		</ul>
 	</section>
 </template>

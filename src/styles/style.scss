@@ -9,6 +9,7 @@ $red: hsl(0, 87%, 67%);
 
 $gray: hsla(0, 0%, 75%, 0.7);
 $grayish-violet: hsl(257, 7%, 63%);
+$light-gray: hsla(0, 2%, 91%, 0.8);
 $very-dark-blue: hsl(255, 11%, 22%);
 $very-dark-violet: hsl(260, 8%, 14%);
 
@@ -34,10 +35,6 @@ h5,
 h6 {
 	color: $very-dark-blue;
 	font-weight: $fw-bold;
-}
-
-section {
-	margin-bottom: 96px;
 }
 
 .container {
@@ -109,6 +106,9 @@ header {
 }
 
 #hero {
+	overflow-x: hidden;
+	padding-bottom: 180px;
+
 	.hero-img {
 		max-width: unset; // to override reset css
 		width: 500px;
@@ -133,123 +133,195 @@ header {
 }
 
 #url-shorter {
-	.actions {
-		background-color: $dark-violet;
-		display: flex;
-		flex-direction: column;
-		border-radius: 8px;
-		padding: 20px;
+	background-color: $light-gray;
+
+	.url-shorter-wrapper {
 		position: relative;
+		top: -80px;
 
-		& > *:not(.bg-shorten-img) {
-			z-index: 2;
-		}
-
-		.bg-shorten-img {
-			position: absolute;
-			z-index: 1;
-			top: 0;
-			right: 0;
-		}
-
-		.url-input {
-			padding: 12px;
-			border-radius: 4px;
-			margin-bottom: 4px;
-
-			&::placeholder {
-				color: $grayish-violet;
-			}
-		}
-
-		.error-message {
-			font-size: 14px;
-			color: $red;
-		}
-
-		.btn {
-			margin-top: 16px;
-		}
-	}
-
-	.loading {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		margin-top: 24px;
-		gap: 12px;
-		height: 36px;
-
-		.circle {
-			width: 18px;
-			height: 18px;
-			border: 1px solid $cyan;
-			border-radius: 50%;
-			animation: animateLoading 500ms ease infinite alternate;
-		}
-		.triangle {
-			border-left: 10px solid transparent;
-			border-right: 10px solid transparent;
-			border-bottom: 20px solid $cyan;
-			animation: animateLoading 500ms 200ms ease infinite alternate;
-		}
-		.square {
-			width: 16px;
-			height: 16px;
-			border: 1px solid $cyan;
-			animation: animateLoading 500ms 300ms ease infinite alternate;
-		}
-
-		@keyframes animateLoading {
-			from {
-				transform: translateY(0);
-			}
-			to {
-				transform: translateY(-8px);
-			}
-		}
-	}
-
-	.shortened-urls {
-		margin-top: 24px;
-		background-color: $white;
-		display: flex;
-		flex-direction: column;
-		gap: 24px;
-		font-size: 16px;
-
-		.links-wrapper {
+		.actions {
+			background-color: $dark-violet;
+			display: flex;
+			flex-direction: column;
 			border-radius: 8px;
-			padding: 16px;
+			padding: 20px;
 			position: relative;
 
-			&::before {
+			& > *:not(.bg-shorten-img) {
+				z-index: 2;
+			}
+
+			.bg-shorten-img {
+				position: absolute;
+				z-index: 1;
+				top: 0;
+				right: 0;
+			}
+
+			.url-input {
+				padding: 12px;
+				border-radius: 4px;
+				margin-bottom: 4px;
+
+				&::placeholder {
+					color: $grayish-violet;
+				}
+			}
+
+			.error-message {
+				font-size: 14px;
+				color: $red;
+			}
+
+			.btn {
+				margin-top: 16px;
+			}
+		}
+
+		.loading {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-top: 24px;
+			gap: 12px;
+
+			.circle {
+				width: 18px;
+				height: 18px;
+				border: 1px solid $dark-violet;
+				border-radius: 50%;
+				animation: animateLoading 500ms ease infinite alternate;
+			}
+			.triangle {
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
+				border-bottom: 20px solid $dark-violet;
+				animation: animateLoading 500ms 200ms ease infinite alternate;
+			}
+			.square {
+				width: 16px;
+				height: 16px;
+				border: 1px solid $dark-violet;
+				animation: animateLoading 500ms 300ms ease infinite alternate;
+			}
+
+			@keyframes animateLoading {
+				from {
+					transform: translateY(0);
+				}
+				to {
+					transform: translateY(-8px);
+				}
+			}
+		}
+
+		.shortened-urls {
+			margin-top: 24px;
+			display: flex;
+			flex-direction: column;
+			gap: 24px;
+			font-size: 16px;
+			position: static;
+			z-index: 2;
+
+			.links-wrapper {
+				background-color: $white;
+				border-radius: 8px;
+				padding: 16px;
+				position: relative;
+
+				&::before {
+					content: "";
+					position: absolute;
+					left: 0;
+					top: 52px;
+					background-color: $gray;
+					width: 100%;
+					height: 1px;
+				}
+
+				.full-url {
+					margin-bottom: 24px;
+					display: inline-block;
+					width: 28ch;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
+
+				.shortened-link {
+					display: flex;
+					flex-direction: column;
+					gap: 12px;
+
+					.link {
+						color: $cyan;
+					}
+				}
+			}
+		}
+	}
+}
+
+#features {
+	background-color: $light-gray;
+
+	.introduction {
+		text-align: center;
+		margin-bottom: 96px;
+
+		.title {
+			font-size: 28px;
+			margin-bottom: 20px;
+		}
+	}
+
+	.features-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 96px;
+
+		.feature {
+			background-color: $white;
+			text-align: center;
+			border-radius: 8px;
+			padding: 0 28px 36px;
+			position: relative;
+
+			&:not(:last-child)::before {
 				content: "";
 				position: absolute;
-				left: 0;
-				top: 52px;
-				background-color: $gray;
-				width: 100%;
-				height: 1px;
+				width: 8px;
+				height: 56px;
+				background-color: $cyan;
+				left: 50%;
+				bottom: -56px;
+				transform: translateX(-50%);
 			}
 
-			.full-url {
-				margin-bottom: 24px;
+			.img-wrapper {
 				display: inline-block;
-				width: 28ch;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				white-space: nowrap;
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: 32px;
+				margin-top: -40px;
+				background-color: $dark-violet;
+				padding: 20px;
+				border-radius: 50%;
+
+				.img {
+					width: 40px;
+					height: 40px;
+				}
 			}
 
-			.shortened-link {
-				display: flex;
-				flex-direction: column;
-				gap: 12px;
+			.title {
+				margin-bottom: 12px;
+				font-size: 20px;
+			}
 
-				.link {
-					color: $cyan;
-				}
+			.description {
+				font-size: 16px;
 			}
 		}
 	}
