@@ -326,3 +326,28 @@ header {
 		}
 	}
 }
+
+#get-started {
+	background-color: $dark-violet;
+	height: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 16px;
+	position: relative;
+
+	& > * {
+		position: static;
+		z-index: 2;
+	}
+
+	.bg-img {
+		position: absolute;
+	}
+
+	.title {
+		color: $white;
+		font-size: 26px;
+	}
+}
