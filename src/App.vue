@@ -4,6 +4,7 @@ import Hero from "./components/Hero.vue";
 import UrlShorter from "./components/UrlShorter.vue";
 import Features from "./components/features/Features.vue";
 import GetStarted from "./components/GetStarted.vue";
+import Footer from "./components/footer/Footer.vue";
 </script>
 
 <template>
@@ -12,4 +13,5 @@ import GetStarted from "./components/GetStarted.vue";
 	<UrlShorter />
 	<Features />
 	<GetStarted />
+	<Footer />
 </template>

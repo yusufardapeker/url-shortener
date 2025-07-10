@@ -352,3 +352,53 @@ header {
 		font-size: 26px;
 	}
 }
+
+footer {
+	background-color: $very-dark-violet;
+	padding: 52px 0;
+	font-size: 15px;
+
+	.footer-wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		svg.logo {
+			margin-bottom: 56px;
+
+			path {
+				fill: $white;
+			}
+		}
+
+		.site-map {
+			display: flex;
+			flex-direction: column;
+			gap: 40px;
+			text-align: center;
+
+			.site-links {
+				.link-title {
+					color: $white;
+					margin-bottom: 20px;
+				}
+
+				.link-wrapper {
+					display: flex;
+					flex-direction: column;
+					gap: 12px;
+
+					.link {
+						color: $gray;
+					}
+				}
+			}
+
+			.social-media-links {
+				display: flex;
+				gap: 24px;
+			}
+		}
+	}
+}
