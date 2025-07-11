@@ -1,7 +1,7 @@
 export const footerLinks = [
 	{
 		linkTitle: "Features",
-		links: ["Url Shortening", "Branded Links", "Analytics"],
+		links: ["Link Shortening", "Branded Links", "Analytics"],
 	},
 	{
 		linkTitle: "Reources",

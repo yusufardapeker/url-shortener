@@ -3,6 +3,7 @@ import { ref } from "vue";
 import Button from "./shared/Button.vue";
 import bgShortenMobileImg from "@/images/bg-shorten-mobile.svg";
 import bgShortenDesktopImg from "@/images/bg-shorten-desktop.svg";
+import clsx from "clsx";
 
 const hasInputError = ref(false);
 const inputErrorMessage = ref("");
@@ -98,7 +99,7 @@ const copyUrl = (e, url) => {
 
 				<input
 					type="text"
-					class="url-input"
+					:class="clsx('url-input', { error: hasInputError })"
 					placeholder="Shorten a link here..."
 					v-model="fullUrl"
 				/>
