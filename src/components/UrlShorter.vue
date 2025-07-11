@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import Button from "./shared/Button.vue";
 import bgShortenMobileImg from "@/images/bg-shorten-mobile.svg";
+import bgShortenDesktopImg from "@/images/bg-shorten-desktop.svg";
 
 const hasInputError = ref(false);
 const inputErrorMessage = ref("");
@@ -90,7 +91,10 @@ const copyUrl = (e, url) => {
 	<section id="url-shorter">
 		<div class="url-shorter-wrapper container">
 			<div class="actions">
-				<img :src="bgShortenMobileImg" alt="bg-img" class="bg-shorten-img" />
+				<picture>
+					<source media="(min-width: 376px)" :srcset="bgShortenDesktopImg" />
+					<img :src="bgShortenMobileImg" alt="bg-img" class="bg-shorten-img" />
+				</picture>
 
 				<input
 					type="text"
