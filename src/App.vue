@@ -2,7 +2,7 @@
 import Header from "./components/header/Header.vue";
 import Hero from "./components/Hero.vue";
 import UrlShorter from "./components/UrlShorter.vue";
-import Features from "./components/features/Features.vue";
+import Advantages from "./components/advantages/Advantages.vue";
 import GetStarted from "./components/GetStarted.vue";
 import Footer from "./components/footer/Footer.vue";
 </script>
@@ -11,7 +11,7 @@ import Footer from "./components/footer/Footer.vue";
 	<Header />
 	<Hero />
 	<UrlShorter />
-	<Features />
+	<Advantages />
 	<GetStarted />
 	<Footer />
 </template>
