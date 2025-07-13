@@ -4,8 +4,8 @@ This is a solution to the [Shortly URL shortening API Challenge challenge on Fro
 
 ### Links
 
-- Url Shorter: [Tiny Url](https://tinyurl.com/)
-- Live Site URL: [The Website](https://your-live-site-url.com)
+- Url Shortener: [Tiny Url](https://tinyurl.com/)
+- Live Site URL: [The Website](https://url-shortener5039.netlify.app/)
 
 ### Built with
 
