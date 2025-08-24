@@ -15,3 +15,26 @@ Live Site URL: [The Website](https://url-shortener5039.netlify.app/)
 ### About The Project
 
 I don't have the figma file so it is not pixel perfect. I have tried to make similar as same as possible. The website is responsive only 1440px and 375px screen sizes.
+
+### Installation
+
+1. Clone the repository:
+
+```
+git clone <repository-url>
+cd url-shortener
+```
+
+2. Install dependencies:
+
+```
+npm install
+```
+
+3. Start development server
+
+```
+npm run dev
+```
+
+4. Go to http://localhost:5173
