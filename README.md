@@ -1,11 +1,10 @@
 # Frontend Mentor - Shortly URL shortening API Challenge solution
 
-This is a solution to the [Shortly URL shortening API Challenge challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G).
-
 ### Links
 
-- Url Shortener: [Tiny Url](https://tinyurl.com/)
-- Live Site URL: [The Website](https://url-shortener5039.netlify.app/)
+This is a solution to the [Shortly URL shortening API Challenge challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G).
+Url Shortener: [Tiny Url](https://tinyurl.com/)
+Live Site URL: [The Website](https://url-shortener5039.netlify.app/)
 
 ### Built with
 
